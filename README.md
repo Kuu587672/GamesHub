@@ -31,14 +31,14 @@ More games will be added soon
 
 ## Project Structure
 
-GamesHub
-│
-├── home.html
-│
-├── games
-│   └── number-guess.html
-│
-└── README.md
+GamesHub \
+│ \
+├── home.html \
+│ \
+├── games \
+│   └── number-guess.html \
+│ \
+└── README.md \
 
 ## Tech Stack
 
