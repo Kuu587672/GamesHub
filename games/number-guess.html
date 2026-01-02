@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Number Guessing Game | GamesHub</title>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col">
+    
+    <!-- Header -->
+    <header class="px-12 py-4 border-b border-gray-800 flex justify-between items-center">
+
+        <h1 class="text-2xl font-bold text-purple-400">
+            GamesHub
+        </h1>
+
+        <a href="../home.html" class="text-sm text-gray-300 hover:text-purple-400 transition">
+            &larr; Back to Home
+        </a>
+
+    </header>
+
+    <!-- Game Section -->
+    <main class="flex-1 flex items-center justify-center px-4">
+
+        <div class="bg-gray-800 rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
+
+            <h2 class="text-3xl font-bold mb-2 text-purple-400">
+                Number Guessing Game
+            </h2>
+
+            <p class="text-gray-400 text-sm mb-6">
+                Guess a number between <span class="font-semibold">1</span> and <span class="font-semibold">100</span>
+            </p>
+
+            <!-- Input -->
+            <input
+                type="number"
+                id="guessInput"
+                min="1"
+                max="100"
+                placeholder="Enter your guess"
+                class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-purple-400 mb-4 text-center"
+            />
+
+            <!-- Buttons -->
+            <div class="flex gap-4">
+
+                <button
+                    onclick="checkGuess()"
+                    class="flex-1 bg-purple-500 hover:bg-purple-600 transition py-2 rounded-lg font-semibold"
+                >
+                    Guess
+                </button>
+
+                <button
+                    onclick="resetGame()"
+                    class="flex-1 bg-purple-500 hover:bg-purple-600 transition py-2 rounded-lg font-semibold"
+                >
+                    Reset
+                </button>
+
+            </div>
+            
+            <!-- Feedback -->
+            <p id="message" class="mt-6 text-lg font-medium"></p>
+            <p id="attempts" class="mt-2 text-sm text-gray-400"></p>
+
+        </div>
+
+    </main>
+
+    <footer class="border-t border-gray-800 py-4 text-center text-sm text-gray-400">
+        &copy; 2026 GamesHub | Built by 
+            <a 
+            href="https://github.com/Kuu587672/GamesHub"
+            target="_blank"
+            class="text-purple-400 hover:underline"
+        >
+            Ranadeb Roy
+        </a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const input = document.getElementById("guessInput");
+            const message = document.getElementById("message");
+            const attemptsText = document.getElementById("attempts");
+
+            const guess = Number(input.value);
+
+            if (!guess || guess < 1 || guess > 100) {
+                message.textContent = "Please enter a number between 1 and 100.";
+                message.className = "mt-6 text-red-400";
+                return;
+            }
+
+            attempts++;
+
+            if (guess === secretNumber) {
+                message.textContent = "Congratulations! You guessed it right!";
+                message.className = "mt-6 text-green-400 text-xl font-bold";
+            } else if (guess > secretNumber) {
+                message.textContent = "Too high! Try again.";
+                message.className = "mt-6 text-yellow-400";
+            } else {
+                message.textContent = "Too low! Try again.";
+                message.className = "mt-6 text-yellow-400";
+            }
+
+            attemptsText.textContent = `Attempts: ${attempts}`;
+            input.value = "";
+            input.focus();
+        }
+
+        function resetGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            document.getElementById("message").textContent = "";
+            document.getElementById("attempts").textContent = "";
+            document.getElementById("guessInput").value = "";
+        }
+    </script>
+
+</body>
+</html>

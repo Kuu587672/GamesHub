@@ -1,0 +1,142 @@
+<!--  This is an ongoing project that dreams to make a website for games -->
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>GamesHub</title>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white min-h-screen flex flex-col">
+    
+    <!-- Header -->
+    <header class="px-12 py-4 flex justify-between items-center border-b border-gray-800">
+
+        <h1 class="text-2xl font-bold tracking-wide text-purple-400">
+            GamesHub
+        </h1>
+
+        <nav class="space-x-6 text-sm text-gray-300">
+
+            <a href="#home" class="hover:text-purple-400 transition">
+                Home
+            </a>
+            <a href="#games" class="hover:text-purple-400 transition">
+                Games
+            </a>
+            <a href="#contact" class="hover:text-purple-400 transition">
+                Contact
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+
+        <!-- Hero Section -->
+        <section id="home" class="text-center px-6 py-20">
+
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">
+                Welcome to <span class="text-purple-400">GamesHub</span>
+            </h1>
+
+            <p class="text-gray-400 max-w-xl mx-auto">
+                Your ultimate destination for fun, interactive, and addictive browser games.
+            </p>
+
+            <button 
+                class="mt-8 px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-lg font-semibold transition shadow-lg"
+                onclick="document.getElementById('Games').scrollIntoView({ behavior: 'smooth' })"
+            >
+                Explore Games
+            </button>
+
+        </section>
+
+        <!-- Featured Games Section -->
+        <section id="games" class="px-6 py-12 max-w-7xl mx-auto">
+
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                Featured Games
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Game Cards -->
+
+                <!-- Number Guessing Game -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:scale-105 hover:shadow-purple-500/20 transition transform shadow-lg">
+
+                    <h3 class="text-xl font-semibold mb-2 text-purple-400">
+                        Number Guessing Game
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mb-4">
+                        Guess the number between 1 and 100 in as few attempts as possible.
+                    </p>
+
+                    <a 
+                        class="inline-block text-sm px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-md transition"
+                        href="games/number-guess.html"
+                    >
+                        Play Now
+                    </a>
+
+                </div>
+
+                <!-- Game 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:scale-105 hover:shadow-purple-500/20 transition transform shadow-lg">
+
+                    <h3 class="text-xl font-semibold mb-2 text-purple-400">
+                        Game Title 2
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mb-4">
+                        Brief description of Game Title 2.
+                    </p>
+
+                    <button class="text-sm px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-md transition">
+                        Coming Soon
+                    </button>
+
+                </div>
+
+                <!-- Game 3 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:scale-105 hover:shadow-purple-500/20 transition transform shadow-lg">
+
+                    <h3 class="text-xl font-semibold mb-2 text-purple-400">
+                        Game Title 3
+                    </h3>
+
+                    <p class="text-gray-400 text-sm mb-4">
+                        Brief description of Game Title 3.
+                    </p>
+
+                    <button class="text-sm px-4 py-2 bg-purple-500 hover:bg-purple-600 rounded-md transition">
+                        Coming Soon
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="border-t border-gray-800 py-4 text-center text-sm text-gray-400">
+        &copy; 2026 GamesHub | Built by
+        <a 
+            href="https://github.com/Kuu587672/GamesHub"
+            target="_blank"
+            class="text-purple-400 hover:underline"
+        >
+            Ranadeb Roy
+        </a>
+    </footer>
+
+</body>
+</html>
