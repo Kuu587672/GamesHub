@@ -38,7 +38,7 @@ GamesHub \
 ├── games \
 │   └── number-guess.html \
 │ \
-└── README.md \
+└── README.md
 
 ## Tech Stack
 
